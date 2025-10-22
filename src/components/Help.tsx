@@ -17,6 +17,9 @@ export const Help: React.FC = () => {
           <Text color="green">/visualizer</Text> - Start the animated visualizer (default)
         </Text>
         <Text>
+          <Text color="green">/download</Text> - Download a YouTube video
+        </Text>
+        <Text>
           <Text color="green">/quit</Text> or <Text color="green">Ctrl+C</Text> - Exit the application
         </Text>
       </Box>
@@ -25,7 +28,17 @@ export const Help: React.FC = () => {
       <Box paddingLeft={2} marginTop={1}>
         <Text>
           This is a terminal user interface with animated visualizations
-          inspired by classic Windows Media Player animations.
+          inspired by classic Windows Media Player animations. It also
+          includes a YouTube video downloader powered by yt-dlp.
+        </Text>
+      </Box>
+      <Text> </Text>
+      <Text bold>YouTube Downloader:</Text>
+      <Box paddingLeft={2} marginTop={1}>
+        <Text>
+          Use <Text color="green">/download</Text> to download videos from YouTube.
+          Videos will be saved to your Downloads folder. You&apos;ll be prompted
+          to enter the video URL.
         </Text>
       </Box>
       <Text> </Text>

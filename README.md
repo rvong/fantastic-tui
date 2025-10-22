@@ -5,6 +5,7 @@ A beautiful terminal user interface application with animated visualizations ins
 ## Features
 
 - **Animated Visualizer**: Watch mesmerizing particle animations and wave effects in your terminal
+- **YouTube Video Downloader**: Download videos from YouTube using yt-dlp
 - **Interactive Commands**: Type commands to navigate and control the app
 - **Help System**: Built-in help accessible via `/help` command
 - **Modern Architecture**: Built with TypeScript, React, and modern best practices
@@ -41,8 +42,21 @@ Once the app is running, you can use these commands:
 
 - `/help` - Display help information
 - `/visualizer` - Return to the animated visualizer (default view)
+- `/download` - Download a YouTube video (you'll be prompted for the URL)
 - `/quit` - Exit the application
 - `Ctrl+C` - Exit the application
+
+### YouTube Video Downloader
+
+The `/download` command allows you to download videos from YouTube:
+
+1. Type `/download` and press Enter
+2. Paste the YouTube video URL when prompted
+3. Press Enter to start the download
+4. Videos are saved to your `~/Downloads` folder
+5. You'll see real-time progress, speed, and ETA
+
+**Note**: The app uses [yt-dlp-wrap](https://www.npmjs.com/package/yt-dlp-wrap), which automatically downloads the yt-dlp binary on first use. No additional installation required!
 
 ## Scripts
 
@@ -63,9 +77,11 @@ fantastic-tui/
 │   ├── components/
 │   │   ├── __tests__/
 │   │   │   ├── Help.test.tsx
-│   │   │   └── Visualizer.test.tsx
+│   │   │   ├── Visualizer.test.tsx
+│   │   │   └── Downloader.test.tsx
 │   │   ├── Help.tsx          # Help screen component
-│   │   └── Visualizer.tsx    # Animated visualization component
+│   │   ├── Visualizer.tsx    # Animated visualization component
+│   │   └── Downloader.tsx    # YouTube downloader component
 │   ├── __tests__/
 │   │   ├── App.test.tsx
 │   │   └── integration.test.tsx
