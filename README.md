@@ -5,6 +5,11 @@ A beautiful terminal user interface application with animated visualizations ins
 ## Features
 
 - **Animated Visualizer**: Watch mesmerizing particle animations and wave effects in your terminal
+- **YouTube Video Downloader**: Download videos from YouTube with real-time progress tracking
+  - Visual progress bar showing download percentage
+  - Live download speed and ETA display
+  - Automatic file saving to ~/Downloads folder
+  - Powered by yt-dlp (automatically managed)
 - **Interactive Commands**: Type commands to navigate and control the app
 - **Help System**: Built-in help accessible via `/help` command
 - **Modern Architecture**: Built with TypeScript, React, and modern best practices
@@ -41,8 +46,34 @@ Once the app is running, you can use these commands:
 
 - `/help` - Display help information
 - `/visualizer` - Return to the animated visualizer (default view)
+- `/download` - Download a YouTube video with visual progress tracking
 - `/quit` - Exit the application
 - `Ctrl+C` - Exit the application
+
+### YouTube Video Downloader
+
+The `/download` command provides a complete video downloading experience:
+
+1. Type `/download` and press Enter
+2. Paste the YouTube video URL when prompted
+3. Press Enter to start the download
+4. Watch the **visual progress bar** with:
+   - **Percentage completed** (e.g., 45.2%)
+   - **Download speed** (e.g., 2.5 MiB/s)
+   - **Estimated time remaining** (ETA)
+   - **File size** information
+5. Videos are automatically saved to `~/Downloads/`
+
+**Example:**
+```
+Progress: 67.3%
+[████████████████████████████████░░░░░░░░░░░░░░░░░░]
+Size: 125.4 MiB
+Speed: 3.2 MiB/s
+ETA: 00:13
+```
+
+**Note**: The app uses [yt-dlp-wrap](https://www.npmjs.com/package/yt-dlp-wrap), which automatically downloads and manages the yt-dlp binary on first use. No manual installation required!
 
 ## Scripts
 
@@ -63,9 +94,11 @@ fantastic-tui/
 │   ├── components/
 │   │   ├── __tests__/
 │   │   │   ├── Help.test.tsx
-│   │   │   └── Visualizer.test.tsx
+│   │   │   ├── Visualizer.test.tsx
+│   │   │   └── Downloader.test.tsx
 │   │   ├── Help.tsx          # Help screen component
-│   │   └── Visualizer.tsx    # Animated visualization component
+│   │   ├── Visualizer.tsx    # Animated visualization component
+│   │   └── Downloader.tsx    # YouTube downloader with progress bar
 │   ├── __tests__/
 │   │   ├── App.test.tsx
 │   │   └── integration.test.tsx
